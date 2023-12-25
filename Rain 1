@@ -1,0 +1,21 @@
+def turn_right():
+    for r in range(0,3):
+        turn_left()
+        
+def turn_around():
+    turn_left()
+    turn_left()  
+    
+move()
+turn_right()
+move()
+
+while not at_goal():
+    if not wall_on_right():
+        turn_right()
+        build_wall()
+        turn_left()
+    elif front_is_clear():
+        move()
+    else:
+        turn_left()
